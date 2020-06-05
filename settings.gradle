@@ -1,0 +1,2 @@
+rootProject.name='APPAT-Admin'
+include ':app'
