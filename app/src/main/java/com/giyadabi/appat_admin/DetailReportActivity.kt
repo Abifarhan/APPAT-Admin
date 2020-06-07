@@ -92,7 +92,6 @@ class DetailReportActivity : AppCompatActivity() {
                 if(dataSnapshot.exists()){
                     ref.ref.child(id!!).child("verification").setValue(true)
                     textView_status_detail.text = "Sudah di verifikasi"
-                    updateVerificationToUser()
                 }
 
             }
@@ -102,7 +101,6 @@ class DetailReportActivity : AppCompatActivity() {
 
     }
 
-//    kendalanya di method ini kak, gmna caranya sewaktu admin verifikasi data di user berubah juga jadi sudah terverifikasi
     private fun updateVerificationToUser() {
 
         val ref = FirebaseDatabase.getInstance().getReference("APPAT/data")
@@ -136,7 +134,7 @@ class DetailReportActivity : AppCompatActivity() {
     }
 
 
-    //    disini aksi ketika tombol verifikasi diklik kak
+    //    disini aksi ketika tombol verifikasi diklik
     private fun performDeleteReport(){
 //        val key =
         val ref = FirebaseDatabase.getInstance().getReference("APPAT/laporan_user")
@@ -155,7 +153,6 @@ class DetailReportActivity : AppCompatActivity() {
 
 
         Log.d("uji nilai", "nilai verifikasi adalah setelah di klik ${textView_status_detail.text}") //
-    //sewaktu saya tes run Log.d tempo hari nilainya sudah bernilai sudah bernilai true kak, tetapi saya bingun cara ubanya
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
